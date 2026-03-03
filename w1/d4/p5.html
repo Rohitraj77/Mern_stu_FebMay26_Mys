@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+        
+            .item{
+                background-color: aquamarine;
+                color: royalblue;
+                padding: 20px;
+            }
+            .Fr{
+                display: grid;
+            grid-template-columns: repeat(Auto-fill,minmax(150px,1fr));
+            grid-template-columns: repeat(Auto-fit,minmax(150px,1fr));
+            /* gap: 10px; */
+            column-gap: 10px;
+            row-gap: 10px;
+            }
+            .grid{
+                display: grid;
+            grid-template-columns: repeat(Auto-fill,minmax(150px,1fr));
+            grid-template-columns: repeat(Auto-fit,minmax(150px,1fr));
+            column-gap: 10px;
+            row-gap: 10px;
+            margin: 10px;
+            }
+        
+        
+    </style>
+</head>
+<body>
+
+     <!-- Fixed with column using fractional columns -->
+     <div class="Fr">
+        <div class="item">fr1</div>
+        <div class="item">fr2</div>
+        <div class="item">fr3</div>
+
+     </div>
+     <div class="grid">
+        <div class="item">fr4</div>
+        <div class="item">fr5</div>
+        <div class="item">fr6</div>
+
+     </div>
+
+ 
+</body>
+</html>
