@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid layouts</title>
+
+
+     <style>
+        .grid-pixels{
+            display: grid;
+            grid-template-columns: 100px 150px 200px;
+            
+        }
+        grid-percent{
+            display: grid;
+            grid-template-columns: 100px 150px 200px;
+            gap: 10px;/*adds spacing gap between grids*/
+            margin: 20px;
+        }
+            .item{
+                background-color: aquamarine;
+                color: royalblue;
+                padding: 20px;
+            }
+            .Fr{
+                display: grid;
+            grid-template-columns: repeat(4,1fr);/*4 equal columns*/
+            grid-template-rows: repeat(3,100px);
+            gap: 10px;
+            }
+            .item{
+                background-color: aquamarine;
+                color: royalblue;
+                padding: 20px;
+            }
+            .span-column{
+                grid-column: 1/3;
+            }
+            .span-row{
+                grid-row: 2/4;
+            }
+            .span-both{
+                grid-row: 1/3;
+                grid-column: 3/5;
+            }
+        
+    </style>
+</head>
+<body>
+
+     <!--grif lines and grid span-->
+     <div class="Fr"><!--grid container-->
+        <div class="item">1</div>
+        <div class="item span-column">col span</div>
+        <div class="item span-row">Row span</div>
+        <div class="item">4</div>
+        <div class="item span-both">Both Spans</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+     </div>
+
+</body>
+</html>
