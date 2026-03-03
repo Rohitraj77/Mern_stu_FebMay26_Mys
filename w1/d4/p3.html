@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+        .grid-pixels{
+            display: grid;
+            grid-template-columns: 100px 150px 200px;
+            
+        }
+        grid-percent{
+            display: grid;
+            grid-template-columns: 100px 150px 200px;
+            gap: 10px;/*adds spacing gap between grids*/
+            margin: 20px;
+        }
+            .item{
+                background-color: aquamarine;
+                color: royalblue;
+                padding: 20px;
+            }
+            .Fr{
+                display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            }
+            .item{
+                background-color: aquamarine;
+                color: royalblue;
+                padding: 20px;
+            }
+        
+        
+    </style>
+</head>
+<body>
+
+     <!-- Fixed with column using fractional columns -->
+     <div class="Fr"><!--grid container-->
+        <div class="item">fr1</div>
+        <div class="item">fr2</div>
+        <div class="item">fr3</div>
+
+     </div>
+
+ 
+</body>
+</html>
