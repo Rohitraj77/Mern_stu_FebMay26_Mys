@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js variables</title>
+</head>
+
+<body>
+    <pre id="out">
+
+    </pre>
+    <button id="runBtn" class="px-3 py-1 rounded mt-2 mb-2 bg-black text-blue-600">
+        Run
+    </button>
+    <script>
+
+        const out = document.getElementById("out");
+        function print(...args) {
+            // let b = 25; if we decalre it here there will be no issues
+            // Console
+            console.log(...args);
+            out.textContent += args.join("") + "\n"
+        }
+
+        function clearOut() {
+            out.textContent = "" //make clear everything in screen
+        }
+        function run() {
+            clearOut();
+            var a = 10;
+            var a = 20;
+            print("var a=", a);
+            let b = 5;
+            b = 15;
+            // let b = 25; creates error if uncommented
+            print("value of let b=", b);
+
+            // const
+            const pi = 3.145;
+            // pi = 2.13;
+            print("const pi=", pi);
+            document.body.style.background = "#D4CC3B";
+
+        }
+        document.getElementById("runBtn").addEventListener("click", run);
+    </script>
+</body>
+
+</html>
