@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js variables</title>
+</head>
+
+<body>
+    <pre id="out">
+
+    </pre>
+    <button id="runBtn" class="px-3 py-1 rounded mt-2 mb-2 bg-black text-blue-600">
+        Run
+    </button>
+    <script>
+
+        const out = document.getElementById("out");
+        function print(...args) {
+            // let b = 25; if we decalre it here there will be no issues
+            // Console
+            console.log(...args);
+            out.textContent += args.join("") + "\n"
+        }
+
+        function clearOut() {
+            out.textContent = "" //make clear everything in screen
+        }
+        function run() {
+            clearOut();
+            if (true) {
+                var x = "var escape the if-block"
+            }
+            print("X = ", x);
+            // let:scope
+            if (true) {
+                let y = "let stays in the if-block"
+                print("Y inside block=", y);
+            }
+            // print("Y outside block=", y);
+            print("Before declaration", testVar);
+            var testVar = "assigned value now"
+            print("After declaration", testVar);
+
+            try {
+                print("before let declaration", testlet);
+            }
+            catch (e) {
+                print("Accessing let before declaration causes ", e.name, e.message);
+            }
+            let testlet = "declared now"
+            print("After let declaration ", testlet);
+
+        }
+        document.getElementById("runBtn").addEventListener("click", run);
+    </script>
+</body>
+
+</html>
