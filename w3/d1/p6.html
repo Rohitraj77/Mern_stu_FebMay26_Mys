@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js objects, arrays</title>
+</head>
+
+<body>
+    <pre id="out">
+
+    </pre>
+    <button id="runBtn" class="px-3 py-1 rounded mt-2 mb-2 bg-black text-blue-600">
+        Run
+    </button>
+    <script>
+
+        const out = document.getElementById("out");
+        function print(...args) {
+            // let b = 25; if we decalre it here there will be no issues
+            // Console
+            console.log(...args);
+            out.textContent += args.join("") + "\n"
+        }
+
+        function clearOut() {
+            out.textContent = "" //make clear everything in screen
+        }
+        function run() {
+            clearOut();
+            let value = "10"
+            print("Value = ",value,"typeof = ",typeof value)
+            value=10
+            print("Value = ",value,"typeof = ",typeof value)
+            print("'10'+5: ","10"+5)
+            print("'10'-5: ","10"-5)//numeric conversion
+            print("'10==10: ","10"==10)//it only compares both the values that's it
+            print("'10==10: ","10"===10)//here it compares the data type too
+            
+            //Data Types
+            const undefval = undefined;
+            const nullval = null;
+            print("undefval = ",typeof undefval);
+            print("nullval = ",nullval,"typeof:",typeof nullval);
+        
+        }
+
+        document.getElementById("runBtn").addEventListener("click", run);
+    </script>
+</body>
+
+</html>
