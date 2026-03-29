@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Analyzer</title>
+
+</head>
+
+<body>
+
+<h2>Feedback Form</h2>
+
+<input type="text" id="name" placeholder="Enter name"><br><br>
+
+<input type="email" id="email" placeholder="Enter email"><br><br>
+
+<select id="type">
+<option value="">Select Feedback Type</option>
+<option>Bug</option>
+<option>Suggestion</option>
+<option>Appreciation</option>
+</select>
+
+<br><br>
+
+<textarea id="feedback" placeholder="Enter feedback"></textarea>
+
+<br><br>
+
+<button id="submitBtn">Submit Feedback</button>
+
+<p id="msg"></p>
+
+<h3>Total Feedback: <span id="count">0</span></h3>
+
+<div id="feedbackContainer"></div>
+
+<script src="Feedback.js"></script>
+
+</body>
+</html>
