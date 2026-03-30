@@ -1,0 +1,35 @@
+const projectsData = [
+{
+    title: "Electronic protection for exam paper leakage using biometric and IOT",
+    description: "It is basically done by using RFID card and biometric and aurdino IDE software by using c++ language",
+    
+    link: "#"
+},
+{
+    title: "E-Commerce Website",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    
+    link: "#"
+},
+{
+    title: "chatbot",
+    description: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source",
+    
+    link: "#"
+},
+{
+    title: "chatbot",
+    description: "Using MERN",
+    
+    link: "#"
+},
+
+{
+title: "MERN Task Manager",
+description: "Full stack task manager using MongoDB, Express, React and Node.js",
+link: "https://github.com/yourusername/mern-task-manager",
+category: "MERN"
+},
+
+
+];
