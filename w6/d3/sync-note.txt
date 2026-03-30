@@ -1,0 +1,3 @@
+This file was written using writeFileSync().
+New text added using fs.appendFileSync().
+Testing appendNew text added using fs.appendFileSync().New text added using fs.appendFileSync().
