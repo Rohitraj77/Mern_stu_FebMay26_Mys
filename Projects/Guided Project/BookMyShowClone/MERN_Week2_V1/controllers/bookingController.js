@@ -20,7 +20,7 @@ function createBooking(req, res, next) {
         if (!movie) {
             return next(new CustomError("Movie not found", 404));
         }
-        const showtime = movies.showtimes.find((s) => s.id === Number(showtimeId));
+        const showtime = movie.showtimes.find((s) => s.id === Number(showtimeId));
         if (!showtime) {
             return next(new CustomError("showtime not found", 404));
         }
@@ -31,14 +31,14 @@ function createBooking(req, res, next) {
         showtime.seatsAvailable-=Number(seatCount);
 
         const booking = {
-            id:booking.length+1,
+            id:bookings.length + 1,
             userId: req.user.id,
             username: req.user.name,
             movieId:movie.title,
             showtimeId:showtime.id,
             showtime:showtime.time,
             seatCount:Number(seatCount)
-        };
+        };  
         bookings.push(booking);
 
         res.status(201).json({
