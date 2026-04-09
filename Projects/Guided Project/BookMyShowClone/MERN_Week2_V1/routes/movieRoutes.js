@@ -19,7 +19,7 @@ router.get("/movies/:id",getMovieById);// sends req to get movies based on id
 
 router.post("/movies",authMiddleware,roleMiddleware("admin"),addMovie);//sends req to create new movie
 router.put("/movies/:id",authMiddleware,roleMiddleware("admin"),updateMovie);//sends req to update movie details
-router.delete("/movvies/:id",authMiddleware,roleMiddleware("admin"),deleteMovie);//sends req to delete movie
+router.delete("/movies/:id",authMiddleware,roleMiddleware("admin"),deleteMovie);//sends req to delete movie
 
 module.exports = router;
 
