@@ -14,6 +14,6 @@ const router = express.Router();
 router.post("/bookings",authMiddleware,bookingValidationHandler,createBooking);
 
 router.get("/bookings/me",authMiddleware,getMyBookings);
-router.get("bookings",authMiddleware,roleMiddleware("admin"),getAllBookings);
+router.get("/bookings",authMiddleware,roleMiddleware("admin"),getAllBookings);
 
 module.exports = router;
