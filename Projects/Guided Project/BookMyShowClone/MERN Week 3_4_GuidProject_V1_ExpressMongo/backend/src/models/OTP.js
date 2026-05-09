@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const otpSchema = new mongoose.Schema({
     email:{
         type:String,
@@ -6,7 +7,7 @@ const otpSchema = new mongoose.Schema({
         lowercase:true,
         index:true,
     },
-    otpSchema:{
+    otp:{
         type:String,
         required:true,
         select:false,
@@ -19,7 +20,8 @@ const otpSchema = new mongoose.Schema({
         type:Number,
         default:0,
     },
-},{
+},
+{
     timestamps: true,
 });
 

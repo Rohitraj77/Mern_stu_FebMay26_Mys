@@ -1,14 +1,15 @@
 const Show = require("../models/Show");
 const Movie = require("../models/Movie");
 
-// Generate seats
-const generateSeats = (totalSeats) => {
+// Generate Seats
+const generateSeats = (totalSeats) =>{
     const seats = [];
     const rows = ["A","B","C","D","E","F","G","H"];
     let seatCount = 0;
     for(let row of rows){
         for(let i = 1; i<=10; i++){
             if(seatCount>=totalSeats) break;
+
             seats.push({
                 seatNumber:`${row}${i}`,
                 isBooked:false,
@@ -18,18 +19,17 @@ const generateSeats = (totalSeats) => {
     }
     return seats;
 };
-
-// Create show
+//Create Show
 exports.createShow = async ({movieId,date,time,totalSeats}) => {
     // check if movie exists
     const movie = await Movie.findById(movieId);
     if(!movie)
-        throw new Error("Movie not found");
+        throw new Error("Movie not found");;
 
     // Generate seats
     const seats = generateSeats(totalSeats);
 
-    const show = await show.create({
+    const show = await Show.create({
         movieId,
         date,
         time,
@@ -37,12 +37,13 @@ exports.createShow = async ({movieId,date,time,totalSeats}) => {
         availableSeats:totalSeats,
         seats,
     });
-    return show;
+    return show; 
 };
 
-// Get shows
+//Get shows
 exports.getShows = async ({movieId,date}) => {
     const filter = {isActive:true};
+
     if(movieId) filter.movieId = movieId;
     if(date) filter.date = new Date(date);
 
@@ -53,16 +54,16 @@ exports.getShows = async ({movieId,date}) => {
     return shows;
 };
 
-// Get show by Ic
+// Get show by Id
 exports.getShowById = async (id) => {
     const show = await Show.findById(id).populate("movieId");
     if(!show)
         throw new Error("Show not found");
-    return show;
-}
 
+    return show;        
+};
 
-// Update the show 
+//Update show
 exports.updateShow = async(id,data)=>{
     const show = await Show.findByIdAndUpdate(id,data,{
         returnDocument: "after",
@@ -70,21 +71,15 @@ exports.updateShow = async(id,data)=>{
     });
     if(!show)
         throw new Error("Show not found");
-    return show;
+
+    return show;  
 };
 
-// Delete the show
-exports.deleteShow = async (id) => {
-    const show = await Show.findByIdAndUpdate(
-        id,
-        { isActive: false },
-        { new: true }
-    );
-
-    if (!show) {
+// Delete show -- soft delete
+exports.deleteShow = async(id)=>{
+    const show = await Show.findByIdAndUpdate(id,{
+        isActive:false,
+    });
+    if(!show)
         throw new Error("Show not found");
-    }
-
-    return { message: "Show deleted successfully (soft delete)" };
 };
-

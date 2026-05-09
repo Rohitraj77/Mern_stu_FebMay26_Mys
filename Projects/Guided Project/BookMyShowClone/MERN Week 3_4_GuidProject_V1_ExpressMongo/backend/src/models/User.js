@@ -6,16 +6,14 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:[true,"Name is required"],
         trim:true,
-        
     },
     email:{
         type:String,
         required:[true,"Email is required"],
         unique:true,
         lowercase:true,
-        match:[/^\s+@\s+\.\s+$/,"please use valid email"],
+        match:[/^\S+@\S+\.\S+$/,"Please use a valid email"],
         index:true,
-
     },
     password:{
         type:String,
@@ -37,10 +35,9 @@ const userSchema = new mongoose.Schema({
     timestamps:true,
 }
 );
-
-// Hash password before we save the data
+//Hash password before save
 userSchema.pre("save",async function () {
-    if(!this.isModified("password")){
+    if (!this.isModified("password")) {
         return;
     }
     try{
@@ -53,7 +50,7 @@ userSchema.pre("save",async function () {
 });
 
 // Compare password function
-userSchema.methods.comparePassword = async function (enteredPassword) {
+userSchema.methods.comparePassword = async function(enteredPassword){
     return await bcrypt.compare(enteredPassword,this.password);
 };
 

@@ -23,7 +23,7 @@ exports.createBooking = async (userId,{showId,seats}) => {
     }
 
     // 4. Mark the seats as booked
-    show.seats = show.seat.map((seat)=>{
+    show.seats = show.seats.map((seat)=>{
         if(seats.includes(seat.seatNumber)) {
             seat.isBooked = true;
         }

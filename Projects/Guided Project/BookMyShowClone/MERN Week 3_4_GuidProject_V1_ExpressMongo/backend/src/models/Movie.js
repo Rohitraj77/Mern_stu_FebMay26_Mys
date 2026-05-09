@@ -1,50 +1,52 @@
 const mongoose = require("mongoose");
+
 const movieSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: [true, "Movie title is required"],
-        trim: true,
-        index: true,
+    title:{
+        type:String,
+        required:[true,"Movie title is required"],
+        trim:true,
+        index:true,
     },
-    genre: {
-        type: String,
-        required: [true, "Genre is required"],
-        enum: [
-            "Action", "Comedy", "drama", "horror", "Sci-Fi", "Romance", "Thriller"
+    genre:{
+        type:String,
+        required:[true,"Genre is required"],
+        enum:[
+            "Action","Comedy","Drama","Horror","Sci-Fi",
+            "Romance","Thriller",
         ],
-        index: true
+        index:true,
     },
     rating:
     {
-        type: Number,
-        required: true,
-        min: [1, "Rating must be atleast 1"],
-        max: [5, "Rating cannot exceed 5"],
-        index: true,
+        type:Number,
+        required:true,
+        min:[1,"Rating must be at least 1"],
+        max:[5,"Rating cannot exceed 5"],
+        index:true,
     },
-    duration: {
-        type: Number,
-        required: [true, "Duration is required"],
+    duration:{
+        type:Number,
+        required:[true,"Duration is required"],
     },
-    releaseDate: {
-        type: Date,
-        required: [true, "Release date is required"],
-        index: true,
+    releaseDate:{
+        type:Date,
+        required:[true,"Release date is required"],
+        index:true,
     },
-    poster: {
-        type: String,
-        default: ""
+    poster:{
+        type:String,
+        default:"",
     },
-    language: {
-        type: String,
-        index: true,
+    language:{
+        type:String,
+        index:true,
     },
-    isActive: {
-        type: Boolean,
-        default: true,
+    isActive:{
+        type:Boolean,
+        default:true,
     },
-}, {
-    timestamp: true,
+},{
+    timestamps:true,
 });
 
 // Compound index
